@@ -1,0 +1,59 @@
+/* pages/photographer_detail/detail.wxss */
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: black;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+  background-image: url('http://file03.16sucai.com/2017/1100/16sucai_v20161117112_686.JPG');
+  background-position: -500rpx,0;
+} 
+.title{
+  font-family: black;
+  font-size: 50rpx;
+}
+.photo{
+  margin-top: 20rpx;
+  height:280rpx;
+  width: 480rpx;
+  border: #000;
+  border-width: 3rpx;
+  border-style: solid;
+}
+.introduction{
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  max-width: 320rpx;
+  min-width: 320rpx;
+  font-family: black;
+  font-size: 34rpx;
+  margin-top: 5rpx;
+}
+.intro-text{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15rpx;
+}
+.item-title{
+  color: #444;
+  font-size: 37rpx;
+  border-bottom: black;
+}
+.self{
+  margin-top: 50rpx;
+  margin-left: 10rpx;
+  color: #999;
+  font-size: 31rpx;
+  max-width: 480rpx;
+  min-width: 480rpx;
+}

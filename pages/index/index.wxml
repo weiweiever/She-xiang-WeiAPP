@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取你的信息 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="choices">
+    <view class="choice" wx:if="{{hasUserInfo}}">
+      <button bindtap="reserve">预约兼职</button>
+    </view>
+    <view class="choice" wx:if="{{hasUserInfo}}">
+      <button bindtap="train">参加培训</button>
+    </view>
+    <view class="choice">
+      <button bindtap="photographers">预约拍摄</button>
+    </view>
+    <view class="choice">
+      <button bindtap="about">关于我们</button>
+    </view>
+  </view>
+</view>

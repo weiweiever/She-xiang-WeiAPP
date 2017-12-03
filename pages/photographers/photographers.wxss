@@ -1,0 +1,74 @@
+/* pages/photographers/photographers.wxss */
+.photographers{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: center;
+  margin-top: 20rpx;
+  font-family: serif;
+  background-image: url('http://file03.16sucai.com/2017/1100/16sucai_v20161117112_686.JPG');
+  background-position: -500rpx,0;
+
+}
+.title{
+  font-family: black;
+  font-size: 50rpx;
+}
+.remark{
+  font-family: black;
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 8rpx;
+}
+.bar{
+  display: flex;
+  flex-direction: row;
+  margin-top: 34rpx;
+  margin-bottom: 10rpx;
+  background-color: #999;
+  border: #000;
+  border-width: 3rpx;
+  border-style: solid;
+  border-radius: 5px;
+}
+.bar-text{
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  color: #fff;
+  font-family: black;
+  font-size: 30rpx;
+}
+.person{
+  background-color: #eee;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  border: #000;
+  border-width: 3rpx;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.info{
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+}
+.photo{
+  height:154rpx;
+  width: 256rpx;
+}
+.introduction{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-width: 400rpx;
+  min-width: 400rpx;
+  font-family: black;
+  font-size: 27rpx;
+  margin-left: 20rpx;
+  margin-top: 5rpx;
+}

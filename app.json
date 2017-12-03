@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/reserve/reserve",
+    "pages/about/about",
+    "pages/photographers/photographers",
+    "pages/train/train",
+    "pages/photographer_detail/detail",
+    "pages/my/my"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "摄享",
+    "navigationBarTextStyle": "black"
+  }
+}

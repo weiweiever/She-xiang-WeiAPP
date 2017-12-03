@@ -1,0 +1,35 @@
+/* pages/train/train.wxss */
+.container3 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 240rpx 0;
+  box-sizing: border-box;
+  background-image: url('http://file03.16sucai.com/2017/1100/16sucai_v20161117112_686.JPG');
+  background-position: -500rpx,300rpx;
+} 
+.title{
+  font-family: black;
+  font-size: 45rpx;
+  border: #000;
+  border-width: 4rpx;
+  border-style: solid;
+  border-radius: 6px;
+}
+.time{
+  display: flex;
+  flex-direction: row;
+  margin-top: 60rpx;
+}
+.button{
+  margin-left: 40rpx;
+}
+.tip{
+  font-size: 30rpx;
+  font-family: black;
+  color: #666;
+  max-width: 500rpx;
+  margin-top: 60rpx;
+}

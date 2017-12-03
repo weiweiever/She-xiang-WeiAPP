@@ -1,0 +1,27 @@
+<!--pages/photographer_detail/detail.wxml-->
+<view class='page'>
+  <text class='title'>详 情</text>
+
+    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511837919&di=7830c16e6a5e18eb50ee88b6b0e8bb7d&imgtype=jpg&er=1&src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1706%2F28-1F616103024.jpg" class="photo"></image>
+    <view class='intro-text'>
+      <view class='item'>
+        <text class='item-title' style='margin-right:40rpx;margin-left:30rpx;'>姓 名:</text>
+        <text class="introduction">傻妞</text>
+      </view>
+      <view class='item'>
+        <text class='item-title' style='margin-right:40rpx;margin-left:30rpx;'>学 院:</text>
+        <text class="introduction">文学与新闻学院</text>
+      </view>
+      <view class='item'>
+        <text class='item-title' style='margin-right:40rpx;margin-left:30rpx;'>风 格:</text>
+        <text class="introduction">人像拍摄</text>
+      </view>
+      <view class='item'>
+        <text class='item-title' style='margin-right:40rpx;margin-left:30rpx;'>地 点:</text>
+        <text class="introduction">江安校区及附近地点</text>
+      </view>
+      <view class='item'>
+        <text class="self">  “我有三年摄影经验，擅长拍摄户外人像，希望能给大家拍出满意的照片”</text>
+      </view>
+    </view>
+</view>

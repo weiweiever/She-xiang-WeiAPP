@@ -1,0 +1,40 @@
+<!--pages/reserve/reserve.wxml-->
+<view class="container2">
+<text wx:if="{{date}}" class="today">今天是{{date}}</text>
+<text class="today">您可以预约未来三天的时间</text>
+
+<form>
+  <view class="item">
+    <text>姓名: </text>
+    <input name='name' class="input"></input>
+  </view>
+  <view class="item">
+    <text>学号: </text>
+    <input name='stuID' class="input"></input>
+  </view>
+  <view class="item">
+    <text>电话: </text>
+    <input name='phone' class="input"></input>
+  </view>
+  <view>
+    <picker value="{{dateValue}}" range="{{dateRange}}" bindchange="bindDateChange" style='margin-top: 40rpx;'>  
+    预约日期：{{dateRange[dateValue]}}  
+    </picker> 
+  </view>
+  <view class="topmargin">
+    <picker value="{{timeValue}}" range="{{timeRange}}" bindchange="bindTimeChange">  
+    预约时间：{{timeRange[timeValue]}}  
+    </picker> 
+  </view>
+  <view class="topmargin">
+    <picker value="{{workValue}}" range="{{workRange}}" bindchange="bindWorkChange">  
+    预约工作：{{workRange[workValue]}}  
+    </picker> 
+  </view>
+  <button form-type='submit' style='margin-top: 30rpx;'>提交审核</button>
+</form>
+<view class="top">
+  <text class="today">如果您已到店：</text>
+  <button form-type='submit'>点我签到！</button>
+</view>
+</view>
