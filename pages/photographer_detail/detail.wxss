@@ -3,16 +3,15 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  font-family: black;
   align-items: center;
-  justify-content: space-between;
-  padding: 30rpx 0;
+  justify-content: center;
+  font-family: serif;
+  padding: 30rpx 0 100rpx;
   box-sizing: border-box;
   background-image: url('http://file03.16sucai.com/2017/1100/16sucai_v20161117112_686.JPG');
   background-position: -500rpx,0;
 } 
 .title{
-  font-family: black;
   font-size: 50rpx;
 }
 .photo{
@@ -30,7 +29,6 @@
   -webkit-box-orient: vertical;
   max-width: 320rpx;
   min-width: 320rpx;
-  font-family: black;
   font-size: 34rpx;
   margin-top: 5rpx;
 }
@@ -56,4 +54,31 @@
   font-size: 31rpx;
   max-width: 480rpx;
   min-width: 480rpx;
+}
+.reserve{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx;
+}
+.reserve-item{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+.input{
+  margin-left: 10rpx;
+  width: 250rpx;
+  border: #000;
+  border-width: 3rpx;
+  border-style: solid;
+  border-radius: 5px;
+}
+.picker{
+  width:500rpx;
+}
+.addition{
+  margin-top: 50rpx;
+  color: #666;
+  font-size: 32rpx;
+  max-width: 500rpx;
 }

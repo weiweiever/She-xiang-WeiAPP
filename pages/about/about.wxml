@@ -1,9 +1,9 @@
 <!--pages/about/about.wxml-->
 <view class="containerr">
-  <image class="image" src="logo.png"></image>
+  <image class="image" src="logo.jpg"></image>
 
 
-  <text>摄享工作室</text>
+  <text style='font-size:43rpx;'>摄享工作室</text>
   <text class="introduction">摄享工作室（image plus）主要以约拍、旅拍、航拍、医疗结构拍摄为创意项目服务，兼以证件照、形象照（个人写真、职业装照、明信片、名片等）、毕业留念册、宣传片和视频制作等传统摄影业务。</text>
   <view class="top">
     <text class="margin-top">联系我们：133 3333 3333</text>

@@ -14,8 +14,6 @@ Page({
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
-      app.globalData.hasUserInfo = true          
-      app.globalData.userInfo = res.userInfo
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true

@@ -11,7 +11,6 @@
   background-position: -500rpx,300rpx;
 } 
 .title{
-  font-family: black;
   font-size: 45rpx;
   border: #000;
   border-width: 4rpx;
@@ -28,7 +27,6 @@
 }
 .tip{
   font-size: 30rpx;
-  font-family: black;
   color: #666;
   max-width: 500rpx;
   margin-top: 60rpx;

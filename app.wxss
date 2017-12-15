@@ -5,20 +5,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 140rpx 0;
+  padding: 140rpx 0 100rpx 0;
   box-sizing: border-box;
   background-image: url('http://file03.16sucai.com/2017/1100/16sucai_v20161117112_686.JPG');
   background-position: -500rpx,0;
 } 
-@font-face{
-  font-family: 'black';
-  src: url("BlackoakStd.eot");
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face{
-  font-family: 'msyh';
-  src: url('msyh.eot');
-  font-weight: normal;
-  font-style: italic;
-}

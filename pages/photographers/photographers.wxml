@@ -7,7 +7,7 @@
       <text class="bar-text">全部类别▼</text>
     </view>
     <text>|</text>
-    <view bindtap='timeSelect'>
+    <view>
       <text class="bar-text">按时间</text>
     </view>
     <text>|</text>

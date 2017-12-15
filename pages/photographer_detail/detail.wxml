@@ -3,7 +3,7 @@
   <text class='title'>详 情</text>
 
     <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511837919&di=7830c16e6a5e18eb50ee88b6b0e8bb7d&imgtype=jpg&er=1&src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1706%2F28-1F616103024.jpg" class="photo"></image>
-    <view class='intro-text'>
+    <view wx:if="{{!press}}" class='intro-text'>
       <view class='item'>
         <text class='item-title' style='margin-right:40rpx;margin-left:30rpx;'>姓 名:</text>
         <text class="introduction">傻妞</text>
@@ -23,5 +23,41 @@
       <view class='item'>
         <text class="self">  “我有三年摄影经验，擅长拍摄户外人像，希望能给大家拍出满意的照片”</text>
       </view>
+      <button bindtap='press'>点击预约</button>
     </view>
+    <form wx:else class='reserve'>
+      <view class='reserve-item'>
+        <text>预约摄影师： 傻妞</text>
+      </view>
+      <view class='reserve-item'>
+        <picker name='item' value="{{itemValue}}" range="{{itemRange}}" bindchange="bindItemChange" class='picker'>  
+    预约项目：{{itemRange[itemValue]}}  
+    </picker>
+      </view>
+      <view class='reserve-item'>
+        <text>预约地点： </text>
+        <textarea name='place' auto-height class='input'></textarea>
+      </view>
+      <view class='reserve-item'>
+        <picker name='date' value="{{dateValue}}" range="{{dateRange}}" bindchange="bindDateChange" class='picker'>  
+    预约日期：{{dateRange[dateValue]}}  
+    </picker> 
+      </view>
+      <view class='reserve-item'>
+        <picker name='time-start' value="{{time1Value}}" range="{{timeRange}}" bindchange="bindTime1Change" class='picker'>  
+    开始时间：{{timeRange[time1Value]}}  
+    </picker> 
+      </view>
+      <view class='reserve-item'>
+        <picker name='time-end' value="{{time2Value}}" range="{{timeRange}}" bindchange="bindTime2Change" class='picker'>  
+    结束时间：{{timeRange[time2Value]}}  
+    </picker> 
+      </view>
+      <button form-type='submit' style='margin-top: 40rpx;'>提交审核</button>
+      <view class='addition'>
+      <text>如有其它预约需求，请联系工作人员，谢谢！</text>
+      </view>
+    </form>
+
+    
 </view>

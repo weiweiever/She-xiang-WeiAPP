@@ -12,7 +12,6 @@
 } 
 
 .today{
-  font-family: black;
   color: #555;
 }
 .topmargin {

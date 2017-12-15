@@ -13,6 +13,11 @@
         </view>
     </view>
 
+    <view class="uploader">
+        <view class="uploader-text">
+            <text style='color: #005070;'>修改信息</text>
+        </view>
+    </view>
 
     <!-- 预约记录 -->
     <view class="record">
@@ -21,19 +26,22 @@
         </view>
     </view>
 
-    <!-- 上传图片测试 -->
-    <view class="uploader">
-        <view class="uploader-text">
-            <text style='color: #005070;'>上传图片</text>
-        </view>
-        <view class="uploader-container" wx:if="{{imgUrl}}">
-            <image
-                class="uploader-image"
-                src="{{imgUrl}}"
-                mode="aspectFit"
-                bindtap="previewImg"
-            ></image>
+    <view class="record">
+        <view class="record-text">
+            <text style='color: #005070;'>我的兼职记录</text>
         </view>
     </view>
 
+    <!-- 我的照片 -->
+    <view class="uploader">
+        <view class="uploader-text">
+            <text style='color: #005070;'>我的照片</text>
+        </view>
+    </view>
+
+    <view class="uploader">
+        <view class="uploader-text">
+            <text style='color: #005070;'>我的积分</text>
+        </view>
+    </view>
 </view>

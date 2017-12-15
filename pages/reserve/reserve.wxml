@@ -17,17 +17,17 @@
     <input name='phone' class="input"></input>
   </view>
   <view>
-    <picker value="{{dateValue}}" range="{{dateRange}}" bindchange="bindDateChange" style='margin-top: 40rpx;'>  
+    <picker name='date' value="{{dateValue}}" range="{{dateRange}}" bindchange="bindDateChange" style='margin-top: 40rpx;'>  
     预约日期：{{dateRange[dateValue]}}  
     </picker> 
   </view>
   <view class="topmargin">
-    <picker value="{{timeValue}}" range="{{timeRange}}" bindchange="bindTimeChange">  
+    <picker name='time' value="{{timeValue}}" range="{{timeRange}}" bindchange="bindTimeChange">  
     预约时间：{{timeRange[timeValue]}}  
     </picker> 
   </view>
   <view class="topmargin">
-    <picker value="{{workValue}}" range="{{workRange}}" bindchange="bindWorkChange">  
+    <picker name='work' value="{{workValue}}" range="{{workRange}}" bindchange="bindWorkChange">  
     预约工作：{{workRange[workValue]}}  
     </picker> 
   </view>
@@ -35,6 +35,6 @@
 </form>
 <view class="top">
   <text class="today">如果您已到店：</text>
-  <button form-type='submit'>点我签到！</button>
+  <button>点我签到！</button>
 </view>
 </view>

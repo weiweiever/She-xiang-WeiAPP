@@ -46,15 +46,13 @@ Page({
       var work1= '摄影师'
       var work2= '化妆师'
       var work3= '修图师'
+      var work4= '导演'
     app.globalData.time = now
-    app.globalData.date1 = time1
-    app.globalData.date2 = time2
-    app.globalData.date3 = time3
     this.setData({
       date,
       dateRange:[date1, date2, date3],
       timeRange:[time1, time2, time3,time4],
-      workRange:[work1,work2,work3]
+      workRange:[work1,work2,work3,work4]
     })
   },
   bindDateChange: function (e) {
