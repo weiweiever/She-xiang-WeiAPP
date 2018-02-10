@@ -8,11 +8,14 @@
     </block>
   </view>
   <view class="choices">
-    <view class="choice" wx:if="{{hasUserInfo}}">
+    <view class="choice" wx:if="{{hasUserInfo && isMember}}">
       <button bindtap="reserve">预约兼职</button>
     </view>
-    <view class="choice" wx:if="{{hasUserInfo}}">
+    <view class="choice" wx:if="{{hasUserInfo && isMember}}">
       <button bindtap="train">参加培训</button>
+    </view>
+    <view class="choice" wx:if="{{!isMember}}">
+      <button bindtap="register">免费注册</button>
     </view>
     <view class="choice">
       <button bindtap="photographers">预约拍摄</button>

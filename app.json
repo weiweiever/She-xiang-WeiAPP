@@ -6,7 +6,9 @@
     "pages/photographers/photographers",
     "pages/train/train",
     "pages/photographer_detail/detail",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/index/register/register",
+    "pages/my/fixinfo/fixinfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

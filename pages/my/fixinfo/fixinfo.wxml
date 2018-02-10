@@ -1,0 +1,42 @@
+<!--pages/my/fixinfo/fixinfo.wxml-->
+<view class='all'>
+  <text class='title'>修改信息</text>
+  <form bindsubmit='formsubmit'>
+    <view style='margin-top:20rpx;display:flex;flex-direction:row;'>
+      <text style='color:#f00;'>*</text>
+      <view>
+      <picker name='region' value="{{regionValue}}" range="{{region}}" bindchange="bindRegionChange" style='width:650rpx;'>
+    所在校区：{{region[regionValue]}}
+      </picker>
+      </view>
+    </view>
+    <view class='item'>
+      <text style='color:#f00;'>*</text>
+      <text>手机号码： </text>
+      <input name='phoneNumber' class='input' type='number' value="{{userInfo.phoneNumber}}"></input>
+    </view>
+    <view style='margin-top:20rpx;width:650rpx;display:flex;flex-direction:row;'>
+      <text style='color:#f00;'>*</text>
+      <view>
+      <picker name='college' value="{{collegeValue}}" range="{{college}}" bindchange="bindCollegeChange" style='width:650rpx;'>
+      所在学院：{{college[collegeValue]}}
+      </picker>
+      </view>
+    </view>
+    <view class='item'>
+      <text space='ensp'> 所学专业：</text>
+      <input name='major' class='input' value="{{userInfo.major}}"></input>
+    </view>
+    <view class='item'>
+      <text style='color:#f00;'>*</text>
+      <text space='ensp'>联系QQ： </text>
+      <input name='qq' class='input' type='number' value="{{userInfo.qq}}"></input>
+    </view>
+    <view class='item'>
+      <text space='ensp'> 联系邮箱：</text>
+      <input name='email' class='input' value="{{userInfo.email}}"></input>
+    </view>
+    <button form-type='submit'  style='margin-top: 30rpx;'>提交修改</button>
+  </form>
+  <text class='tip'>填写真实信息后您才可以享受到培训、兼职、预约外拍等服务，我们会竭力保证您的信息安全，请放心填写</text>
+</view>

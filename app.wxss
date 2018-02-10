@@ -5,8 +5,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 140rpx 0 100rpx 0;
+  padding: 140rpx 0 200rpx 0;
   box-sizing: border-box;
-  background-image: url('http://file03.16sucai.com/2017/1100/16sucai_v20161117112_686.JPG');
+  background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/back.jpg?Expires=10001518167514&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=77L4mNjrfDd9HK0NCfjbuDuzMV0%3D');
   background-position: -500rpx,0;
 } 

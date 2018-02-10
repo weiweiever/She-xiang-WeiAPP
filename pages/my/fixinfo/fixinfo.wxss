@@ -1,36 +1,35 @@
-/* pages/reserve/reserve.wxss */
-.container2 {
+/* pages/my/fixinfo/fixinfo.wxss */
+.all{
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 115rpx 0;
+  padding: 140rpx 0 300rpx 0;
   box-sizing: border-box;
   background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/back.jpg?Expires=10001518167514&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=77L4mNjrfDd9HK0NCfjbuDuzMV0%3D');
   background-position: -500rpx,300rpx;
-} 
-
-.today{
-  color: #555;
 }
-.topmargin {
-  margin-top:28rpx;
-}
-.top{
-  display: flex;
-  flex-direction: column;
-  margin-top: 100rpx;
+.title{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 70rpx;
+  margin-bottom: 40rpx;
 }
 .item{
   display: flex;
   flex-direction: row;
-  margin-top: 40rpx;
+  margin-top: 20rpx;
+  width: 600rpx;
 }
 .input{
+  width:350rpx;
   margin-left: 15rpx;
   border: #000;
   border-width: 3rpx;
   border-style: solid;
   border-radius: 5px;
+}
+.tip{
+  color: #888;
+  font-size: 25rpx;
+  width:600rpx;
 }

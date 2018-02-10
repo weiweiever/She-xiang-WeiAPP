@@ -15,20 +15,20 @@
 
     <view class="uploader">
         <view class="uploader-text">
-            <text style='color: #005070;'>修改信息</text>
+            <text style='color: #005070;' bindtap='fixinfo'>修改信息</text>
         </view>
     </view>
 
     <!-- 预约记录 -->
     <view class="record">
         <view class="record-text">
-            <text style='color: #005070;'>我的预约记录</text>
+            <text style='color: #005070;'>我的兼职记录</text>
         </view>
     </view>
 
     <view class="record">
         <view class="record-text">
-            <text style='color: #005070;'>我的兼职记录</text>
+            <text style='color: #005070;'>我的预约记录</text>
         </view>
     </view>
 
