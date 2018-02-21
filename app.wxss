@@ -7,6 +7,6 @@
   justify-content: space-between;
   padding: 140rpx 0 200rpx 0;
   box-sizing: border-box;
-  background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/back.jpg?Expires=10001518167514&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=77L4mNjrfDd9HK0NCfjbuDuzMV0%3D');
-  background-position: -500rpx,0;
+  background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/back.jpg?Expires=36001518747724&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=C7cZfqyO261dXQD0rt67vmPvMqs%3D');
+  background-position: -100rpx,100rpx;
 } 

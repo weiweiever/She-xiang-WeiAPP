@@ -8,7 +8,9 @@
     "pages/photographer_detail/detail",
     "pages/my/my",
     "pages/index/register/register",
-    "pages/my/fixinfo/fixinfo"
+    "pages/my/fixinfo/fixinfo",
+    "pages/my/jobrecord/jobrecord",
+    "pages/my/jobrecord/cancel/cancel"
   ],
   "window": {
     "backgroundTextStyle": "light",

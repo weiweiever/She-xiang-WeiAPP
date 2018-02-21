@@ -1,0 +1,27 @@
+<!--pages/my/jobrecord/jobrecord.wxml-->
+
+<view class="page">
+  <text class='title'>我的兼职记录</text>
+  <view style='flex-direction:row;margin-left:150rpx;'>
+    <text class='tip' >只显示最近的二十条记录</text>
+    <button class='cancel' size='mini' bindtap='cancel'>取消预约</button>
+  </view>
+  <view class='table'>
+    <view class='param'>
+      <view class='param-item' style='width:24%'>日期</view>
+      <view class='param-item' style='width:24%'>时间</view>
+      <view class='param-item' style='width:20%'>工作</view>
+      <view class='param-item' style='width:20%'>状态</view>
+      <view class='param-item' style='width:12%'>评分</view>
+    </view>
+    <view wx:for="{{record}}">
+      <view class='param'>
+      <view class='param-item' style='font-size:32rpx;width:24%'>{{item.date}}</view>
+      <view class='param-item' style='font-size:32rpx;width:24%'>{{item.time}}</view>
+      <view class='param-item' style='font-size:33rpx;width:20%'>{{item.work}}</view>
+      <view class='param-item' style='font-size:33rpx;width:20%'>{{item.finish}}</view>
+      <view class='param-item' style='font-size:33rpx;width:12%'>{{item.score}}</view>
+    </view>
+    </view>
+  </view>
+</view>

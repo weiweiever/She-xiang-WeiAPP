@@ -7,7 +7,47 @@ Page({
   data: {
     press:false
   },
-
+  reserve:function(e){
+    console.log('填写的信息',e.detail.value)
+    if(e.detail.value.item==null){
+      wx.showToast({
+        title: '请填写预约项目',
+        icon:'none'
+      })
+      return
+    }
+    if (e.detail.value.place == "") {
+      wx.showToast({
+        title: '请填写预约地点',
+        icon: 'none'
+      })
+      return
+    }
+    if (e.detail.value.date == null) {
+      wx.showToast({
+        title: '请填写预约日期',
+        icon: 'none'
+      })
+      return
+    }
+    if (e.detail.value.timeStart == null) {
+      wx.showToast({
+        title: '请填写开始时间',
+        icon: 'none'
+      })
+      return
+    }
+    if (e.detail.value.timeEnd == null) {
+      wx.showToast({
+        title: '请填写预约项目',
+        icon: 'none'
+      })
+      return
+    }
+    wx.showToast({
+      title: '暂未开放！',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

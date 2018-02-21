@@ -1,0 +1,23 @@
+<!--pages/my/jobrecord/cancel/cancel.wxml-->
+<view class='all'>
+  <text class='title'>取消预约</text>
+
+  <view class='table'>
+    <view class='param'>
+      <view class='param-item' style='width:25%'>日期</view>
+      <view class='param-item' style='width:25%'>时间</view>
+      <view class='param-item' style='width:25%'>工作</view>
+      <view class='param-item' style='width:25%'>操作</view>
+    </view>
+    <view wx:for="{{records}}" wx:for-index='idx'>
+      <view class='param'>
+      <view class='param-item' style='font-size:32rpx;width:25%'>{{item.date}}</view>
+      <view class='param-item' style='font-size:32rpx;width:25%'>{{item.time}}</view>
+      <view class='param-item' style='font-size:33rpx;width:25%'>{{item.work}}</view>
+      <view class='button' style='font-size:26rpx;width:25%'>
+        <button size='mini' style='margin-left:20rpx;' bindtap='cancel' data-idx="{{item.id}}">取消</button>
+      </view>
+      </view>
+    </view>
+  </view>
+</view>

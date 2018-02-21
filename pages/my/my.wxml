@@ -22,26 +22,26 @@
     <!-- 预约记录 -->
     <view class="record">
         <view class="record-text">
-            <text style='color: #005070;'>我的兼职记录</text>
+            <text style='color: #005070;' bindtap='jobrecord'>我的兼职记录</text>
         </view>
     </view>
 
     <view class="record">
         <view class="record-text">
-            <text style='color: #005070;'>我的预约记录</text>
+            <text style='color: #005070;' bindtap='lack'>我的预约记录</text>
         </view>
     </view>
 
     <!-- 我的照片 -->
     <view class="uploader">
         <view class="uploader-text">
-            <text style='color: #005070;'>我的照片</text>
+            <text style='color: #005070;' bindtap='lack'>我的照片</text>
         </view>
     </view>
 
     <view class="uploader">
         <view class="uploader-text">
-            <text style='color: #005070;'>我的积分</text>
+            <text style='color: #005070;' bindtap='lack'>我的积分</text>
         </view>
     </view>
 </view>

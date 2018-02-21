@@ -6,7 +6,6 @@
   color: #555;
   font-size: 35rpx;
 }
-
 .margin-top{
   margin-top: 40rpx;
   font-size: 43rpx;
@@ -26,11 +25,11 @@
   justify-content: space-between;
   padding: 70rpx 0;
   box-sizing: border-box;
-  background-image: url('http://file03.16sucai.com/2017/1100/16sucai_v20161117112_686.JPG');
-  background-position: -500rpx,0;
+  background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/back.jpg?Expires=36001518747724&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=C7cZfqyO261dXQD0rt67vmPvMqs%3D');
+  background-position: -100rpx,100rpx;
 } 
 
 .image{
-  height:370rpx;
-  width: 370rpx;
+  height:355rpx;
+  width: 375rpx;
 }

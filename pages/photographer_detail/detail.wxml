@@ -9,7 +9,7 @@
         <text class="introduction">傻妞</text>
       </view>
       <view class='item'>
-        <text class='item-title' style='margin-right:40rpx;margin-left:30rpx;'>学 院:</text>
+        <text class='item-title' style='margin-right:40rpx;margin-left:30rpx        ;'>学 院:</text>
         <text class="introduction">文学与新闻学院</text>
       </view>
       <view class='item'>
@@ -25,9 +25,11 @@
       </view>
       <button bindtap='press'>点击预约</button>
     </view>
-    <form wx:else class='reserve'>
+
+
+    <form wx:else class='reserve' bindsubmit='reserve'>
       <view class='reserve-item'>
-        <text>预约摄影师： 傻妞</text>
+        <text>预约摄影师： 梁林</text>
       </view>
       <view class='reserve-item'>
         <picker name='item' value="{{itemValue}}" range="{{itemRange}}" bindchange="bindItemChange" class='picker'>  
@@ -44,14 +46,14 @@
     </picker> 
       </view>
       <view class='reserve-item'>
-        <picker name='time-start' value="{{time1Value}}" range="{{timeRange}}" bindchange="bindTime1Change" class='picker'>  
+        <picker name='timeStart' value="{{time1Value}}" range="{{timeRange}}" bindchange="bindTime1Change" class='picker'>  
     开始时间：{{timeRange[time1Value]}}  
     </picker> 
       </view>
       <view class='reserve-item'>
-        <picker name='time-end' value="{{time2Value}}" range="{{timeRange}}" bindchange="bindTime2Change" class='picker'>  
+        <picker name='timeEnd' value="{{time2Value}}" range="{{timeRange}}" bindchange="bindTime2Change" class='picker'>  
     结束时间：{{timeRange[time2Value]}}  
-    </picker> 
+    </picker>
       </view>
       <button form-type='submit' style='margin-top: 40rpx;'>提交审核</button>
       <view class='addition'>

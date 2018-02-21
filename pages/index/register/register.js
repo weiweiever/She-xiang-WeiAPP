@@ -105,13 +105,31 @@ Page({
                 app.globalData.isMember = true
                 app.globalData.hasUserInfo = true
                 wx.showToast({
-                  title: '注册成功！返回主界面',
+                  title: '注册成功！',
                 })
-                wx.setStorage({
-                  key: 'allInfo',
-                  data: info
-                })
-                wx.navigateTo({
+                wx.request({
+                  url: 'https://zhangzhiyu.xin/weiphp/index.php/Login/Login/getUserInfo',
+                  method: 'POST',
+                  header: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                  },
+                  data: {
+                    openId: app.globalData.openId
+                  },
+                  success: function (res) {
+                    app.globalData.userInfo = res.data
+                    wx.setStorage({
+                      key: 'allInfo',
+                      data: res.data
+                    })
+                    app.globalData.isMember = true
+                    app.globalData.hasUserInfo=true
+                  },
+                  complete: function () {
+                    wx.hideLoading()
+                  }
+                })                
+                    wx.navigateTo({
                   url: '../index'
                 })
               }

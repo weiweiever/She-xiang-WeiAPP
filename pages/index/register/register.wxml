@@ -46,7 +46,7 @@
       <text space='ensp'> 联系邮箱：</text>
       <input name='email' class='input'></input>
     </view>
-    <button form-type='submit'  style='margin-top: 30rpx;'>提交注册</button>
+    <button form-type='submit' style='margin-top: 30rpx;'>提交注册</button>
   </form>
   <text class='tip'>只有在注册后您才可以享受到培训、兼职、预约外拍等服务，我们会竭力保证您的信息安全，请放心填写</text>
 </view>

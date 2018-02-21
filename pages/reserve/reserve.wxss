@@ -7,30 +7,32 @@
   justify-content: space-between;
   padding: 115rpx 0;
   box-sizing: border-box;
-  background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/back.jpg?Expires=10001518167514&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=77L4mNjrfDd9HK0NCfjbuDuzMV0%3D');
-  background-position: -500rpx,300rpx;
-} 
-
+  background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/back.jpg?Expires=36001518747724&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=C7cZfqyO261dXQD0rt67vmPvMqs%3D');
+  background-position: -100rpx,100rpx;
+}
+.title{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 70rpx;
+  margin-bottom: 70rpx;
+}
 .today{
   color: #555;
 }
 .topmargin {
-  margin-top:28rpx;
+  margin-top:30rpx;
 }
 .top{
   display: flex;
   flex-direction: column;
-  margin-top: 100rpx;
+  margin-top: 200rpx;
 }
-.item{
-  display: flex;
-  flex-direction: row;
-  margin-top: 40rpx;
+.tip{
+  margin-top: 30rpx;
+  color:#666;
 }
-.input{
-  margin-left: 15rpx;
-  border: #000;
-  border-width: 3rpx;
-  border-style: solid;
-  border-radius: 5px;
+.tip2{
+  margin-top: 30rpx;
+  color:#666;
+  width: 430rpx;
+  font-size: 28rpx;
 }

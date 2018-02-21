@@ -1,0 +1,43 @@
+/* pages/my/jobrecord/cancel/cancel.wxss */
+.all{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx 0 0 0;
+  background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/back.jpg?Expires=36001518747724&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=C7cZfqyO261dXQD0rt67vmPvMqs%3D');
+  background-position: -100rpx,100rpx;
+}
+.title{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 70rpx;
+  margin-bottom: 5rpx;
+}
+.table{
+  margin-top: 15rpx;
+  justify-content: center;
+  align-items: center; 
+  border: 2px solid darkgray;
+  width: 100%;
+}
+.param {
+  justify-content: center;
+  background-color: #aaa;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  height: 55rpx;
+  align-items: center;
+  border-bottom: 1px solid #111;
+}
+.param-item{
+  height:55rpx;
+  background-color: #aaa;
+  color: #fff;
+  border-right: 1px solid #111;
+  border-bottom: 1px solid #111;
+}
+.button{
+  height: 54rpx;
+  color: #222;
+}

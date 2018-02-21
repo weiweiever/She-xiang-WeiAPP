@@ -13,6 +13,16 @@ Page({
       url: 'fixinfo/fixinfo',
     })
   },
+  lack:function(){
+    wx.showToast({
+      title: '暂未开放！',
+    })
+  },
+  jobrecord:function(){
+    wx.navigateTo({
+      url: 'jobrecord/jobrecord',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -3,15 +3,12 @@
   <text class='title'>我们的培训时间：</text>
   <view class="time">
     <text>周一上午11:00-12:00</text>
-    <button class="button" size="mini">报名</button>
   </view>
   <view class="time">
     <text>周四上午11:00-12:00</text>
-    <button class="button" size="mini">报名</button>
   </view>
   <view class="time">
     <text>周六下午17:00-18:00</text>
-    <button class="button" size="mini">报名</button>
   </view>
   <text class="tip">报名后请提前几分钟到达，以免耽误进度和影响其他同学</text>
 </view>
