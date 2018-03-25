@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 240rpx 0;
+  padding: 200rpx 0;
   box-sizing: border-box;
   background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/back.jpg?Expires=36001518747724&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=C7cZfqyO261dXQD0rt67vmPvMqs%3D');
   background-position: -100rpx,100rpx;
@@ -25,9 +25,40 @@
 .button{
   margin-left: 40rpx;
 }
+.back{
+  border: #000;
+  border-width: 2rpx;
+  border-style: solid;
+  border-radius: 6px;
+  background-color: #fff;
+}
 .tip{
   font-size: 30rpx;
   color: #666;
   max-width: 500rpx;
   margin-top: 60rpx;
+}
+.table{
+  margin-top: 30rpx;
+  justify-content: center;
+  align-items: center; 
+  border: 2px solid darkgray;
+  width: 100%;
+}
+.param {
+  justify-content: center;
+  background-color: #aaa;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  height: 50rpx;
+  align-items: center;
+  border-bottom: 1px solid #111;
+}
+.param-item{
+  background-color: #aaa;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+  border-right: 1px solid #111;
 }

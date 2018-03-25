@@ -5,14 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    empty:null,
+    info:null
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this
+    wx.request({
+      url: 'https://zhangzhiyu.xin/weiphp/index.php/Train/Train/getTrainInfo',
+      success:function(res){
+        console.log('培训信息',res.data.data)
+          that.data.empty=res.data.empty
+          that.data.info=res.data.data
+          that.setData({
+            empty:res.data.empty,
+            info:res.data.data
+          })
+      }
+    })
   },
 
   /**

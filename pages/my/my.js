@@ -16,6 +16,7 @@ Page({
   lack:function(){
     wx.showToast({
       title: '暂未开放！',
+      icon:'none'
     })
   },
   jobrecord:function(){

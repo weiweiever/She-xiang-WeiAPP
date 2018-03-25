@@ -10,7 +10,8 @@
     "pages/index/register/register",
     "pages/my/fixinfo/fixinfo",
     "pages/my/jobrecord/jobrecord",
-    "pages/my/jobrecord/cancel/cancel"
+    "pages/my/jobrecord/cancel/cancel",
+    "pages/my/apply/apply"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40rpx 0 0 0;
+  padding: 40rpx 0;
   background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/back.jpg?Expires=36001518747724&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=C7cZfqyO261dXQD0rt67vmPvMqs%3D');
   background-position: -100rpx,100rpx;
 }

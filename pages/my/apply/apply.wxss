@@ -1,4 +1,4 @@
-/* pages/my/fixinfo/fixinfo.wxss */
+/* pages/train/apply/apply.wxss */
 .all{
   height: 100%;
   display: flex;
@@ -16,23 +16,37 @@
 }
 .item{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 20rpx;
   width: 600rpx;
 }
 .input{
-  width:350rpx;
-  margin-left: 15rpx;
+  margin-left: 80rpx;
   border: #000;
   border-width: 3rpx;
   border-style: solid;
   border-radius: 5px;
+  background-color: #fff;
 }
 .tip{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #888;
   font-size: 25rpx;
-  width:600rpx;
 }
-.button{
-  margin-top: 100rpx;
+.check{
+  display: flex;
+  flex-direction: column;
+  margin-left: 80rpx;
+  background-color: #fff;
+}
+.img{
+  width: 576rpx;
+  height: 324rpx;
+  margin-left: 80rpx;
+  border: #000;
+  border-width: 3rpx;
+  border-style: solid;
+  background-color: #fff;
 }

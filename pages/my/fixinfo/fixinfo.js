@@ -107,6 +107,11 @@ Page({
       }
     })
   },
+  fixServeInfo:function(){
+    wx.navigateTo({
+      url: '../apply/apply',
+    })
+  },
   bindRegionChange: function (e) {
     this.setData({
       regionValue: e.detail.value

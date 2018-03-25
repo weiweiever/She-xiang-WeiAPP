@@ -21,7 +21,7 @@
       <view class='param-item' style='font-size:33rpx;width:20%'>{{item.work}}</view>
       <view class='param-item' style='font-size:33rpx;width:20%'>{{item.finish}}</view>
       <view class='param-item' style='font-size:33rpx;width:12%'>{{item.score}}</view>
-    </view>
+      </view>
     </view>
   </view>
 </view>

@@ -39,4 +39,5 @@
     <button form-type='submit'  style='margin-top: 30rpx;'>提交修改</button>
   </form>
   <text class='tip'>填写真实信息后您才可以享受到培训、兼职、预约外拍等服务，我们会竭力保证您的信息安全，请放心填写</text>
+  <button class='button' bindtap='fixServeInfo'>修改服务信息</button>
 </view>
