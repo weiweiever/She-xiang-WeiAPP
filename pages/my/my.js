@@ -13,6 +13,11 @@ Page({
       url: 'fixinfo/fixinfo',
     })
   },
+  reserverecord:function(){
+    wx.navigateTo({
+      url: 'reserverecord/reserverecord',
+    })
+  },
   lack:function(){
     wx.showToast({
       title: '暂未开放！',

@@ -1,0 +1,23 @@
+<!--pages/my/reserverecord/reserverecord.wxml-->
+<view class="page">
+  <text class='title'>我的预约记录</text>
+  <view style='flex-direction:row;margin-left:150rpx;'>
+    <text class='tip' >只显示最近的二十条记录</text>
+    <button class='cancel' size='mini' bindtap='cancel'>取消预约</button>
+  </view>
+
+  <view wx:for="{{record}}" wx:if="{{!empty}}">
+    <view class="person" bindtap='detail' id="{{item.id}}">
+      <image src="{{item.avatarurl}}" class="photo"></image>
+      <view class="info">
+        <text class="introduction">摄影师：{{item.servername}}</text>
+        <text class="introduction">预约日期：{{item.date}}</text>
+        <text class="introduction">预约时间：{{item.time}}</text>
+        <text class="introduction">预约地点：{{item.place}}</text>
+        <text class="introduction">预约项目：{{item.item}}</text>
+        <text class="introduction">预约状态：{{item.status}}</text>
+        <text class="introduction">评 分：{{item.rank}}</text>
+      </view>
+    </view>
+  </view>
+</view>

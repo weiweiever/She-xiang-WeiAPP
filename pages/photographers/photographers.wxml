@@ -23,44 +23,17 @@
       <text class="bar-text">综合排序</text>
     </view>
   </view>
-  <view class="person" hidden='true'>
-    <image src="https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/02.jpg?Expires=3601518747549&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=OgGmx2IMofnkiBq2dzN%2BqvEE40Y%3D" class="photo"></image>
-    <view class="info">
-      <text class="introduction">姓名：狗蛋</text>
-      <text class="introduction">风格：各种</text>
-      <text class="introduction">自我介绍：大家好我是狗蛋，欢迎大家咨询</text>
+
+  <view wx:for="{{all}}" wx:if="{{!empty}}">
+    <view class="person" bindtap='detail' id="{{item.id}}">
+      <image src="{{item.avatarurl}}" class="photo"></image>
+      <view class="info">
+        <text class="introduction">姓名：{{item.name}}</text>
+        <text class="introduction">风格：{{item.type}}</text>
+        <text class="introduction">自我介绍：{{item.intro}}</text>
+      </view>
     </view>
   </view>
-  <view class="person" bindtap='detail'>
-    <image src="https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/timg.jpg?Expires=36001518747598&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=E0CbyMTuSQWNRN4tz2Y%2Bkfa74CM%3D" class="photo"></image>
-    <view class="info">
-      <text class="introduction">姓名：梁林</text>
-      <text class="introduction">风格：人像拍摄</text>
-      <text class="introduction">自我介绍：我有三年摄影经验，擅长拍摄户外人像，希望能给大家拍出满意的照片</text>
-    </view>
-  </view>
-  <view class="person" hidden='true'>
-    <image src="https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/00.jpg?Expires=36011518747635&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=%2BS934eb%2Fvz4gyNQpUSSkVvPdP7o%3D" class="photo"></image>
-    <view class="info">
-      <text class="introduction">姓名：水蓝</text>
-      <text class="introduction">风格：风景拍摄</text>
-      <text class="introduction">自我介绍：大家好我是水蓝，欢迎大家咨询</text>
-    </view>
-  </view>
-  <view class="person" hidden='true'>
-    <image src="https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/01.jpg?Expires=36001518747658&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=RGfQuN8o0pqM1wX5uj%2BYfclYVwY%3D" class="photo"></image>
-    <view class="info">
-      <text class="introduction">姓名：炙炎</text>
-      <text class="introduction">风格：集体照</text>
-      <text class="introduction">自我介绍：大家好我是炙炎，欢迎大家咨询</text>
-    </view>
-  </view>
-  <view class="person" hidden='true'>
-    <image src="https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/03.jpg?Expires=3601518747680&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=d0igpYqRQw5feo5LHRMjeIn3nPc%3D" class="photo"></image>
-    <view class="info">
-      <text class="introduction">姓名：芙蕖</text>
-      <text class="introduction">风格：医疗摄影</text>
-      <text class="introduction">自我介绍：大家好我是芙蕖，欢迎大家咨询</text>
-    </view>
-  </view>
+
+  
 </view>

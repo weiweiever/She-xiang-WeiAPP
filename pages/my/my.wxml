@@ -28,7 +28,7 @@
 
     <view class="record">
         <view class="record-text">
-            <text style='color: #005070;' bindtap='lack'>我的预约记录</text>
+            <text style='color: #005070;' bindtap='reserverecord'>我的预约记录</text>
         </view>
     </view>
 

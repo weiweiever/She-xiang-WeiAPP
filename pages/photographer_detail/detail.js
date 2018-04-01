@@ -1,13 +1,21 @@
 // pages/photographer_detail/detail.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    press:false
+    press:false,
+    info:null,
+    id:null,
+    itemRange: null,
+    dateRange:'',
+    timeRange:''
   },
   reserve:function(e){
+    var that = this
     console.log('填写的信息',e.detail.value)
     if(e.detail.value.item==null){
       wx.showToast({
@@ -30,28 +38,83 @@ Page({
       })
       return
     }
-    if (e.detail.value.timeStart == null) {
+    if (e.detail.value.time == null) {
       wx.showToast({
-        title: '请填写开始时间',
+        title: '请选择预约时段',
         icon: 'none'
       })
       return
     }
-    if (e.detail.value.timeEnd == null) {
-      wx.showToast({
-        title: '请填写预约项目',
-        icon: 'none'
-      })
-      return
+    var req={
+      date:that.data.dateRange[e.detail.value.date],
+      time: that.data.timeRange[e.detail.value.time],
+      place:e.detail.value.place,
+      item:that.data.itemRange[e.detail.value.item],
+      reserveId:app.globalData.userInfo.id,
+      reserveName: app.globalData.userInfo.trueName,
+      serverId:that.data.id,
+      serverName:that.data.info.trueName
     }
-    wx.showToast({
-      title: '暂未开放！',
+    console.log('填写的信息',req)
+    wx.request({
+      url: 'https://zhangzhiyu.xin/weiphp/index.php/ReservePhoto/ReservePhoto/reserve',
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      data:req,
+      success:function(res){
+        console.log(res.data)
+        if(res.data!='error'){
+          wx.showModal({
+            title: '提示',
+            content: '预约成功！请在‘我的’界面留意预约信息',
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+                wx.navigateTo({
+                  url: '../photographers/photographers',
+                })
+              }
+            }
+          })
+         
+        }else{
+          wx.showModal({
+            title: '提示',
+            content: '预约失败！此时段已被预约，请选择其他时段',
+          })
+        }
+      }
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this
+
+    var id=options.id
+    this.data.id=id
+    wx.request({
+      url: 'https://zhangzhiyu.xin/weiphp/index.php/ReservePhoto/ReservePhoto/getInfoById',
+      data:{
+        id:id
+      },
+      success:function(res){
+        console.log('接收到的摄影师信息',res.data)
+        if(res.data.empty==false){
+          that.data.info=res.data.data
+          that.data.itemRange = that.data.info.type.split(",")
+          that.setData({
+            info:res.data.data,
+            itemRange: that.data.info.type.split(",")
+          })
+        }
+      }
+    })
+
     var now = new Date
     var tomorrow = new Date(now)
     tomorrow.setDate(tomorrow.getDate() + 1)
@@ -69,30 +132,34 @@ Page({
     var month3 = after3.getMonth() + 1
     var day3 = after3.getDate()
 
-    var date1 = year1 + '年' + month1 + '月' + day1 + '日'
-    var date2 = year2 + '年' + month2 + '月' + day2 + '日'
-    var date3 = year3 + '年' + month3 + '月' + day3 + '日'
-    var time1 = '9:00'
-    var time2 = '10:00'
-    var time3 = '11:00'
-    var time4 = '12:00'
-    var time5 = '13:00'
-    var time6 = '14:00'
-    var time7 = '15:00'
-    var time8 = '16:00'
-    var time9 = '17:00'
-    var time10= '18:00'
-    var time11= '19:00'
-    var time12= '20:00'
+    var date1 = year1 + '-' + month1 + '-' + day1
+    var date2 = year2 + '-' + month2 + '-' + day2
+    var date3 = year3 + '-' + month3 + '-' + day3
 
-    var item1 = '集体照'
-    var item2 = '约拍'
-    var item3 = '证件照'
+    var time0 = '8:00-9:00'
+    var time1 = '9:00-10:00'
+    var time2 = '10:00-11:00'
+    var time3 = '11:00-12:00'
+    var time4 = '12:00-13:00'
+    var time5 = '13:00-14:00'
+    var time6 = '14:00-15:00'
+    var time7 = '15:00-16:00'
+    var time8 = '16:00-17:00'
+    var time9 = '17:00-18:00'
+    var time10= '18:00-19:00'
+    var time11= '19:00-20:00'
+    var time12= '20:00-21:00'
+
+    var item1 = '室内写真'
+    var item2 = '室外写真'
+    var item3 = '毕业相册'
     var item4 = '短视频'
+    
+    this.data.timeRange = [time1, time2, time3, time4, time5, time6, time7, time8, time9, time10, time11, time12]
+    this.data.dateRange = [date1, date2, date3]
     this.setData({
       dateRange: [date1, date2, date3],
       timeRange: [time1, time2, time3, time4, time5, time6, time7, time8, time9, time10, time11, time12],
-      itemRange: [item1, item2, item3, item4]
     })
   },
   press: function(){

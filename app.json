@@ -11,7 +11,8 @@
     "pages/my/fixinfo/fixinfo",
     "pages/my/jobrecord/jobrecord",
     "pages/my/jobrecord/cancel/cancel",
-    "pages/my/apply/apply"
+    "pages/my/apply/apply",
+    "pages/my/reserverecord/reserverecord"
   ],
   "window": {
     "backgroundTextStyle": "light",

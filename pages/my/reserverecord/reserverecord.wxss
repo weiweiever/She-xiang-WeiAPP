@@ -1,38 +1,48 @@
-/* pages/photographers/photographers.wxss */
-.photographers{
+/* pages/my/reserverecord/reserverecord.wxss */
+.page{
   display: flex;
   flex-direction: column;
-  background-color: #fff;
   align-items: center;
-  margin-top: 20rpx;
-  font-family: serif;
+  padding: 40rpx 0;
   background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/back.jpg?Expires=36001518747724&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=C7cZfqyO261dXQD0rt67vmPvMqs%3D');
   background-position: -100rpx,100rpx;
 }
 .title{
-  font-size: 50rpx;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 70rpx;
+  margin-bottom: 5rpx;
 }
-.remark{
-  font-size: 28rpx;
-  color: #666;
-  margin-top: 8rpx;
+.tip{
+  color: #888;
+  font-size: 32rpx;
+  margin-bottom: 30rpx;
 }
-.bar{
+.table{
+  margin-top: 15rpx;
+  justify-content: center;
+  align-items: center; 
+  border: 2px solid darkgray;
+  width: 100%;
+}
+.param {
+  justify-content: center;
+  background-color: #aaa;
+  color: #fff;
   display: flex;
   flex-direction: row;
-  margin-top: 34rpx;
-  margin-bottom: 10rpx;
-  background-color: #999;
-  border: #000;
-  border-width: 3rpx;
-  border-style: solid;
-  border-radius: 5px;
+  height: 50rpx;
+  align-items: center;
+  border-bottom: 1px solid #111;
 }
-.bar-text{
-  margin-left: 10rpx;
-  margin-right: 10rpx;
+.param-item{
+  background-color: #aaa;
+  align-items: center;
   color: #fff;
-  font-size: 30rpx;
+  justify-content: center;
+  border-right: 1px solid #111;
+}
+.cancel{
+  margin-left: 40rpx;
 }
 .person{
   background-color: #eee;
@@ -51,8 +61,9 @@
   flex-direction: column;
 }
 .photo{
-  height:163rpx;
-  width: 272rpx;
+  margin-top: 20rpx;
+  height:208rpx;
+  width: 352rpx;
 }
 .introduction{
   display: -webkit-box;

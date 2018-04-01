@@ -1,41 +1,31 @@
-// pages/photographers/photographers.js
+// pages/my/reserverecord/reserverecord.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    all:null,
-    empty:true
+    record:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this
-    
+    var that = this
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/ReservePhoto/ReservePhoto/allCameramen',
-      success: function (res) {
-        console.log('摄影师数据', res.data)
-        if (!res.data.isempty) {
-          that.data.all = res.data
-          that.data.empty = false
-          that.setData({
-            all: res.data.data,
-            empty:false
-          })
-        }
+      url: 'https://zhangzhiyu.xin/weiphp/index.php/ReservePhoto/ReservePhoto/getrecords',
+      data:{
+        reserveid:app.globalData.userInfo.id
+      },
+      success:function(res){
+        console.log(res.data)
+        that.data.record=res.data.data
+        that.setData({
+          record:res.data.data
+        })
       }
-    })
-  },
-
-  detail:function(e){
-    console.log('点击事件',e)
-    var id=e.currentTarget.id
-    wx.navigateTo({
-      url: '../photographer_detail/detail?id='+id,
     })
   },
 
