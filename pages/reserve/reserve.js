@@ -1,6 +1,6 @@
 // pages/reserve/reserve.js
 const app = getApp()
-
+const server = require('../../utils/util.js').server
 Page({
   /**
    * 页面的初始数据
@@ -43,7 +43,7 @@ Page({
     }
     console.log('提交的信息：',info)
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/PartJob/PartJob/ask',
+      url: server + '/PartJob/PartJob/ask',
       method: 'POST',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -97,7 +97,7 @@ Page({
         }
         console.log("位置信息：",info)
         wx.request({
-          url: 'https://zhangzhiyu.xin/weiphp/index.php/PartJob/PartJob/sign',
+          url: server + '/PartJob/PartJob/sign',
           method:'POST',
           header: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -150,7 +150,6 @@ Page({
    */
   onLoad: function () {
     var that = this
-    var util = require('../../utils/util.js')
     var now = new Date
       var year = now.getFullYear()
       var month = now.getMonth()+1
@@ -180,7 +179,7 @@ Page({
       var date30 = year3 + '-' + month3 + '-' + day3
       this.data.submitdate = [date10,date20,date30]
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/PartJob/PartJob/getjobinfo',
+      url: server + '/PartJob/PartJob/getjobinfo',
       success:function(res){
         var jobs_ = res.data.jobs
         var times_ = res.data.times

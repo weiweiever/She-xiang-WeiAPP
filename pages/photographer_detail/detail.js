@@ -1,6 +1,6 @@
 // pages/photographer_detail/detail.js
 const app = getApp()
-
+const server = require('../../utils/util.js').server
 Page({
 
   /**
@@ -57,7 +57,7 @@ Page({
     }
     console.log('填写的信息',req)
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/ReservePhoto/ReservePhoto/reserve',
+      url: server + '/ReservePhoto/ReservePhoto/reserve',
       method: 'POST',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -94,11 +94,11 @@ Page({
    */
   onLoad: function (options) {
     var that=this
-
+  
     var id=options.id
     this.data.id=id
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/ReservePhoto/ReservePhoto/getInfoById',
+      url: server + '/ReservePhoto/ReservePhoto/getInfoById',
       data:{
         id:id
       },
@@ -109,7 +109,13 @@ Page({
           that.data.itemRange = that.data.info.type.split(",")
           that.setData({
             info:res.data.data,
-            itemRange: that.data.info.type.split(",")
+            itemRange: that.data.info.type.split(","),
+            img1: res.data.data.img1,
+            img2: res.data.data.img2,
+            img3: res.data.data.img3,
+            img4: res.data.data.img4,
+            img5: res.data.data.img5,
+            img6: res.data.data.img6,
           })
         }
       }

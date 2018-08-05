@@ -1,10 +1,12 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const server=require('../../utils/util.js').server
 Page({
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    showPop: true,
+    animation: null
   },
   
   //事件处理函数
@@ -21,8 +23,14 @@ Page({
      })
    }
   },
+  bindPopImg:function(){
+    this.setData({
+      showPop: false
+    })   
+  },
   onLoad: function () {
     var that = this
+    wx.clearStorageSync()
     // 登录
     wx.onNetworkStatusChange(function(res){
       if(!res.isConnected){
@@ -59,7 +67,7 @@ Page({
           success: res => {
             // 发送 res.code 到后台换取 openId, sessionKey, unionId
             wx.request({
-              url: 'https://zhangzhiyu.xin/weiphp/index.php/Login/Login/getOpenId',
+              url: server+'/Login/Login/getOpenId',
               data: {
                 code: res.code
               },
@@ -91,7 +99,7 @@ Page({
                             userInfo:res.userInfo
                           })
                           wx.request({
-                            url: 'https://zhangzhiyu.xin/weiphp/index.php/Login/Login/isMember',
+                            url: server +'/Login/Login/isMember',
                             data: {
                               openId: app.globalData.openId,
                             },
@@ -104,7 +112,7 @@ Page({
                               if (res.data.isMember) {
                                 app.globalData.isMember = true
                                 wx.request({
-                                  url: 'https://zhangzhiyu.xin/weiphp/index.php/Login/Login/getUserInfo',
+                                  url: server +'/Login/Login/getUserInfo',
                                   method: 'POST',
                                   header: {
                                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -192,7 +200,6 @@ Page({
   },
   getUserInfo: function(e) {
     var that = this
-    
     console.log('手动获取用户信息',e)
     if (e.detail.errMsg != "getUserInfo:fail auth deny"){
       app.globalData.userInfo = e.detail.userInfo
@@ -213,7 +220,7 @@ Page({
         mask: true
       })
       wx.request({
-        url: 'https://zhangzhiyu.xin/weiphp/index.php/Login/Login/isMember',
+        url: server +'/Login/Login/isMember',
         data: {
           openId: app.globalData.openId,
         },
@@ -225,7 +232,7 @@ Page({
           console.log('手动获取会员信息',res.data)
           if (res.data.isMember) {
             wx.request({
-              url: 'https://zhangzhiyu.xin/weiphp/index.php/Login/Login/getUserInfo',
+              url: server +'/Login/Login/getUserInfo',
               method: 'POST',
               header: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -281,20 +288,7 @@ Page({
     })
   },
   onReady: function(){
-    if (!app.globalData.hasUserInfo) {
-      wx.showModal({
-        title: '提示',
-        content: '部分功能需注册后使用',
-        showCancel:false,
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          } else {
-            console.log('用户点击取消')
-          }
-        }
-      })
-    }
+    
   },
   register:function(){
     if(!app.globalData.hasUserInfo){
@@ -309,5 +303,58 @@ Page({
         url: 'register/register',
       })
     }
+  },
+  onShow:function(){
+    var that = this
+    
+    wx.request({
+      url: server +'/Login/Login/getUserInfo',
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        openId: app.globalData.openId
+      },
+      success: function (res) {
+        wx.hideLoading()
+        console.log('服务器获取userinfo', res.data)
+        if(res.data == false){
+          wx.removeStorageSync('allInfo')
+          that.data.isMember=false
+          that.setData({
+            ismember:false
+          })
+          return
+        }
+        
+        app.globalData.userInfo = res.data
+        that.setData({
+          isMember: true,
+          hasUserInfo: true,
+          userInfo: app.globalData.userInfo
+        })
+        wx.setStorage({
+          key: 'allInfo',
+          data: app.globalData.userInfo
+        })
+      }
+    })
+
+    wx.getStorage({
+      key: 'allInfo',
+      success: function (res) {
+        console.log('allInfo读取成功', res.data)
+        app.globalData.userInfo = res.data
+        app.globalData.openId = res.data.openId
+        app.globalData.hasUserInfo = true
+        app.globalData.isMember = true
+        that.setData({
+          userInfo: app.globalData.userInfo,
+          hasUserInfo: true,
+          isMember: true
+        })
+      }
+  })
   }
 })

@@ -1,5 +1,6 @@
 // pages/my/jobrecord/cancel/cancel.js
 const app = getApp()
+const server = require('../../../../utils/util.js').server
 Page({
 
   /**
@@ -12,7 +13,7 @@ Page({
     console.log(e.target.dataset)
     var id = e.target.dataset.idx
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/PartJob/PartJob/delete',
+      url: server + '/PartJob/PartJob/delete',
       method: 'GET',
       data:{id: id},
       success:function(res){
@@ -29,7 +30,7 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/PartJob/PartJob/cancellable',
+      url: server + '/PartJob/PartJob/cancellable',
       method: 'GET',
       data:{id:app.globalData.userInfo.id},
       success:function(res){

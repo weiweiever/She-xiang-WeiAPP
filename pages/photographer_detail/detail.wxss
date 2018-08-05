@@ -48,9 +48,8 @@
   border-bottom: black;
 }
 .self{
-  margin-top: 50rpx;
   margin-left: 10rpx;
-  color: #999;
+  color: #777;
   font-size: 31rpx;
   max-width: 480rpx;
   min-width: 480rpx;
@@ -81,4 +80,26 @@
   color: #444;
   font-size: 32rpx;
   max-width: 500rpx;
+}
+.wall{
+  width: 90%;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  border: #000;
+  border-width: 3rpx;
+  border-style: solid;
+  border-radius: 5px;
+}
+.img{
+  width: 306rpx;
+  height: 153rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  border: #000;
+  border-width: 3rpx;
+  border-style: solid;
+  background-color: #fff;
 }

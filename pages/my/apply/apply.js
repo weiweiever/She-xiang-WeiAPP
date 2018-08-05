@@ -1,5 +1,6 @@
 // pages/train/apply/apply.js
 const app=getApp()
+const server = require('../../../utils/util.js').server
 Page({
 
   /**
@@ -18,14 +19,14 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/UpLoad/UpLoad/getInfo',
+      url: server + '/UpLoad/UpLoad/getInfo',
       data:{
         id:app.globalData.userInfo.id
       },
       success:function(res){
         console.log(res.data)
         if (!isNaN(res.data.code) && res.data.code==0){
-          that.data.img=res.data.data.avatarurl
+          that.data.img = res.data.data.avatarurl
           that.data.intro = res.data.data.intro
           that.data.choices = res.data.data.freetime.split(',')
           that.setData({
@@ -33,6 +34,16 @@ Page({
             img: that.data.img,
             intro: that.data.intro,
             choices: that.data.choices
+          })
+        }
+        if (!isNaN(res.data.code) && res.data.code == 1) {
+          wx.showModal({
+            title: '提示',
+            content: '您还没有服务权限！请在工作人员审核通过后再试',
+            showCancel: false,
+            success: function (res) {
+              wx.navigateBack()
+            }
           })
         }
       }
@@ -46,11 +57,18 @@ Page({
   formsubmit:function(e){
     var that = this
     console.log(e.detail.value)
+    if(e.detail.value.choices==""){
+      wx.showToast({
+        title: '至少选一个时间',
+        icon: 'none'
+      })
+      return
+    }
     var info=e.detail.value
     info.choices = info.choices.join(",")
     console.log('修改',info)
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/UpLoad/UpLoad/fix',
+      url: server + '/index.php/UpLoad/UpLoad/fix',
       method:'POST',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -62,6 +80,9 @@ Page({
       },
       success:function(res){
         console.log(res.data)
+        wx.showToast({
+          title: '修改成功！',
+        })
       }
     })
   },
@@ -81,7 +102,7 @@ Page({
           mask:true
         })
         wx.uploadFile({
-          url: 'https://zhangzhiyu.xin/weiphp/index.php/UpLoad/UpLoad/ServeImg',
+          url: server + '/UpLoad/UpLoad/ServeImg',
           filePath: that.data.img,
           name: 'photo',
           header: {
@@ -92,10 +113,18 @@ Page({
             openId:app.globalData.userInfo.openId
           },
           success:function(res){
-            console.log(res)
-          },
-          complete:function(){
             wx.hideLoading()
+            console.log(res.data)
+            if (res.data==0) {
+              wx.showToast({
+                title: '上传成功',
+              })
+            } else {
+              wx.showToast({
+                title: '发生错误，请重试',
+                icon: 'none'
+              })
+            }
           }
         })
         that.setData({

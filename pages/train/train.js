@@ -1,4 +1,5 @@
 // pages/train/train.js
+const server = require('../../utils/util.js').server
 Page({
 
   /**
@@ -14,15 +15,21 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/Train/Train/getTrainInfo',
+      url: server + '/Train/Train/getTrainInfo',
       success:function(res){
-        console.log('培训信息',res.data.data)
+        console.log('培训信息',res.data)
           that.data.empty=res.data.empty
           that.data.info=res.data.data
           that.setData({
             empty:res.data.empty,
             info:res.data.data
           })
+          if(res.data.empty==true){
+            wx.showToast({
+              title: '暂无培训信息！',
+              icon:'none'
+            })
+          }
       }
     })
   },

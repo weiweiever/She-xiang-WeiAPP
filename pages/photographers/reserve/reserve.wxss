@@ -1,0 +1,70 @@
+/* pages/photographers/reserve/reserve.wxss */
+.container2 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 115rpx 0;
+  box-sizing: border-box;
+  background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/back.jpg?Expires=36001518747724&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=C7cZfqyO261dXQD0rt67vmPvMqs%3D');
+  background-position: -100rpx,100rpx;
+}
+.title{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 70rpx;
+  margin-bottom: 70rpx;
+}
+.today{
+  color: #555;
+}
+.topmargin {
+  margin-top:30rpx;
+}
+.top{
+  display: flex;
+  flex-direction: column;
+  margin-top: 200rpx;
+}
+.tip{
+  margin-top: 30rpx;
+  color:#666;
+}
+.tip2{
+  margin-top: 30rpx;
+  color:#666;
+  width: 430rpx;
+  font-size: 28rpx;
+}
+.reserve{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx;
+}
+.reserve-item{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+.input{
+  margin-left: 15rpx;
+  width: 485rpx;
+  border: #000;
+  border-width: 3rpx;
+  border-style: solid;
+  border-radius: 5px;
+}
+.picker{
+  height: 50rpx;
+  width:220rpx;
+  border: #000;
+  border-width: 3rpx;
+  border-style: solid;
+  border-radius: 5px;
+}
+.addition{
+  margin-top: 50rpx;
+  color: #444;
+  font-size: 32rpx;
+  max-width: 500rpx;
+}

@@ -17,11 +17,15 @@
     <view class="choice">
       <button bindtap="train">参加培训</button>
     </view>
-    <view class="choice" wx:if="{{hasUserInfo && isMember}}">
-      <button bindtap="photographers">预约拍摄</button>
+    <view class="choice">
+      <button bindtap="photographers">摄影展示</button>
     </view>
     <view class="choice">
       <button bindtap="about">关于我们</button>
     </view>
   </view>
+</view>
+
+<view class='pop' animation='animation' bindtap='bindPopImg' wx:if="{{showPop}}">
+<image class='popimg' src='https://she-xiang.top/weiphp/Uploads/Picture/popImg/pop.jpg'></image>
 </view>

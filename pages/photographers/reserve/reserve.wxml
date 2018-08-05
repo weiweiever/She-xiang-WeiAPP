@@ -1,0 +1,61 @@
+<!--pages/photographers/reserve/reserve.wxml-->
+<view class="container2">
+  <view class="title">
+    <text>预约外拍</text>
+  </view>
+
+  <form wx:if='false' class='reserve' bindsubmit='reserve'>
+      <view class='reserve-item'>
+        <text>预约项目：</text>
+        <picker name='item' value="{{itemVal}}" range="{{itemRange}}" bindchange="bindItemChange" >  
+          <view class='picker'>
+          {{itemRange[itemVal]}}
+          </view>
+        </picker>
+      </view>
+      <view class='reserve-item'>
+        预约日期：
+        <picker name='date' mode='date' value="{{dateVal}}" start="{{dateStart}}" end="{{dateEnd}}" bindchange="bindDateChange" >  
+          <view class='picker'>
+          {{dateVal}}  
+          </view>
+        </picker> 
+      </view>
+      <view class='reserve-item'>
+        预约时段：
+      </view>
+      <view class='reserve-item' style='margin-left:15rpx;'>
+        <picker name='time1' mode='time' value="{{time1Val}}" start='08:00' end='20:00' bindchange="bindTime1Change" >
+          <view class='picker'>
+            {{time1Val}}
+          </view>   
+        </picker> 
+        <text>-</text>
+         <picker name='time2' mode='time' value="{{time2Val}}" start='08:00' end='20:00' bindchange="bindTime2Change" >
+          <view class='picker'>   
+            {{time2Val}}
+          </view>
+        </picker> 
+      </view>
+      <view class='reserve-item'>
+        <text>预约地点： </text>
+      </view>
+      <view class='reserve-item'>
+        <textarea name='place' auto-height class='input' maxlength='48' placeholder='请不要输入过长的地点信息'></textarea>
+      </view>
+      <view class='reserve-item'>
+        <text>拍摄人数： </text>
+        <input name='number' class='input' style='width:100rpx;' type='number' maxlength='3'></input>
+      </view>
+      <view class='reserve-item'>
+        <text>联系电话： </text>
+        <input name='phone' class='input' style='width:280rpx;' type='number' maxlength='11'></input>
+      </view>
+        
+
+      <button form-type='submit' style='margin-top: 40rpx;'>提交审核</button>
+      <view class='addition'>
+      <text>预约24小时内会有工作人员与您联系，加急请拨打13258183353。如有其它预约需求，也请联系工作人员，谢谢！</text>
+      </view>
+    </form>
+</view>

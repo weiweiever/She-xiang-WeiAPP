@@ -1,6 +1,6 @@
 // pages/index/register/register.js
 const app = getApp()
-
+const server = require('../../../utils/util.js').server
 Page({
 
   /**
@@ -30,19 +30,13 @@ Page({
         icon: 'none',
       })
       return
-    } else if (!/20\d{11}/.test(e.detail.value.studentId)) {
-      wx.showToast({
-        title: "请填写您的学号！",
-        icon: 'none',
-      })
-      return
-    }else if (e.detail.value.region == null) {
+    } else if (e.detail.value.region == null) {
       wx.showToast({
         title: "请选择所在校区！",
         icon: 'none',
       })
       return
-    }else if (!/13[123569]{1}\d{8}|15[1235689]\d{8}|188\d{8}/.test(e.detail.value.phoneNumber)){
+    } else if (!/^[1][0-9]{10}$/.test(e.detail.value.phoneNumber) && e.detail.value.phoneNumber!=''){
       wx.showToast({
         title: '请输入正确手机号码！',
         icon: 'none',
@@ -92,7 +86,7 @@ Page({
           app.globalData.userInfo = info
           console.log('要提交的信息', info)
           wx.request({
-            url: 'https://zhangzhiyu.xin/weiphp/index.php/Login/Login/register',
+            url: server +'/Login/Login/register',
             method: 'POST',
             header: {
               'Content-Type': 'application/x-www-form-urlencoded',
@@ -108,7 +102,7 @@ Page({
                   title: '注册成功！',
                 })
                 wx.request({
-                  url: 'https://zhangzhiyu.xin/weiphp/index.php/Login/Login/getUserInfo',
+                  url: server +'/Login/Login/getUserInfo',
                   method: 'POST',
                   header: {
                     'Content-Type': 'application/x-www-form-urlencoded'

@@ -6,17 +6,19 @@
     <button class='cancel' size='mini' bindtap='cancel'>取消预约</button>
   </view>
 
-  <view wx:for="{{record}}" wx:if="{{!empty}}">
-    <view class="person" bindtap='detail' id="{{item.id}}">
-      <image src="{{item.avatarurl}}" class="photo"></image>
-      <view class="info">
-        <text class="introduction">摄影师：{{item.servername}}</text>
-        <text class="introduction">预约日期：{{item.date}}</text>
-        <text class="introduction">预约时间：{{item.time}}</text>
-        <text class="introduction">预约地点：{{item.place}}</text>
-        <text class="introduction">预约项目：{{item.item}}</text>
-        <text class="introduction">预约状态：{{item.status}}</text>
-        <text class="introduction">评 分：{{item.rank}}</text>
+ <view class='table'>
+    <view class='param'>
+      <view class='param-item' style='width:24%'>日期</view>
+      <view class='param-item' style='width:20%'>项目</view>
+      <view class='param-item' style='width:40%'>地点</view>
+      <view class='param-item' style='width:16%'>状态</view>
+    </view>
+    <view wx:for="{{record}}" >
+      <view class='param'>
+      <view class='param-item' style='font-size:32rpx;width:24%'>{{item.date}}</view>
+      <view class='param-item' style='font-size:32rpx;width:20%'>{{item.item}}</view>
+      <view class='param-item' style='font-size:33rpx;width:40%'>{{item.place}}</view>
+      <view class='param-item' style='font-size:33rpx;width:16%'>{{item.status}}</view>
       </view>
     </view>
   </view>

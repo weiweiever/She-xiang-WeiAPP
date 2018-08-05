@@ -12,7 +12,9 @@
     "pages/my/jobrecord/jobrecord",
     "pages/my/jobrecord/cancel/cancel",
     "pages/my/apply/apply",
-    "pages/my/reserverecord/reserverecord"
+    "pages/my/reserverecord/reserverecord",
+    "pages/my/photowall/photowall",
+    "pages/photographers/reserve/reserve"
   ],
   "window": {
     "backgroundTextStyle": "light",

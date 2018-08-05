@@ -1,5 +1,6 @@
 // pages/my/reserverecord/reserverecord.js
 const app = getApp()
+const server = require('../../../utils/util.js').server
 Page({
 
   /**
@@ -8,14 +9,19 @@ Page({
   data: {
     record:null
   },
-
+  cancel:function(){
+    wx.showToast({
+      title: '暂未开放！',
+      icon:'none'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/ReservePhoto/ReservePhoto/getrecords',
+      url: server + '/ReservePhoto/ReservePhoto/getrecords',
       data:{
         reserveid:app.globalData.userInfo.id
       },
@@ -25,6 +31,13 @@ Page({
         that.setData({
           record:res.data.data
         })
+        if(res.data.empty==true){
+          wx.showToast({
+            title: '暂无记录！',
+            icon:'none',
+            duration:2500
+          })
+        }
       }
     })
   },

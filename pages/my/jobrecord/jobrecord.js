@@ -1,6 +1,6 @@
 // pages/my/jobrecord/jobrecord.js
 const app = getApp()
-
+const server = require('../../../utils/util.js').server
 Page({
 
   /**
@@ -20,25 +20,16 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/PartJob/PartJob/getrecords',
+      url: server + '/PartJob/PartJob/getrecords',
       method:'GET',
       data:{
         id:app.globalData.userInfo.id
       },
       success:function(res){
         if(res.data.empty==true){
-          console.log('无兼职记录')
-          wx.showModal({
-            title: '提示',
-            content: '暂无兼职记录！',
-            showCancel:false,
-            success:function(res){
-              if(res.confirm){
-                wx.navigateTo({
-                  url: '../my',
-                })
-              }
-            }
+          wx.showToast({
+            title: '暂无记录！',
+            icon: 'none'
           })
         }
         else{

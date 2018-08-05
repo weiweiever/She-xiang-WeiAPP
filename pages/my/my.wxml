@@ -1,5 +1,4 @@
 <!--pages/my/my.wxml-->
-
 <view class="container">
     <!-- 用户信息 -->
     <view class="userinfo">

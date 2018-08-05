@@ -1,8 +1,8 @@
 <!--pages/photographers/photographers.wxml-->
 <view class="photographers">
-  <text class="title">预约拍摄</text>
+  <text class="title">摄影展示</text>
   <text class="remark">“最伟大的艺术，是光”</text>
-  <view class="bar" >
+  <view class="bar">
     <view>
       <text class="bar-text">全部类别▼</text>
     </view>
@@ -23,17 +23,22 @@
       <text class="bar-text">综合排序</text>
     </view>
   </view>
-
-  <view wx:for="{{all}}" wx:if="{{!empty}}">
-    <view class="person" bindtap='detail' id="{{item.id}}">
-      <image src="{{item.avatarurl}}" class="photo"></image>
-      <view class="info">
-        <text class="introduction">姓名：{{item.name}}</text>
-        <text class="introduction">风格：{{item.type}}</text>
-        <text class="introduction">自我介绍：{{item.intro}}</text>
+  <view class='list'>
+    <view wx:for="{{all}}" wx:if="{{!empty}}">
+      <view class="person" bindtap='detail' id="{{item.userid}}">
+        <image src="{{item.avatarurl}}" class="photo"></image>
+        <view class="info">
+          <text class="introduction">姓名：{{item.name}}</text>
+          <text class="introduction">项目：{{item.type}}</text>
+          <text class="introduction">自我介绍：{{item.intro}}</text>
+        </view>
       </view>
     </view>
   </view>
-
-  
+  <view class='reserve'>
+    <view class='button'>
+      <button bindtap='reserve'>点击预约</button>
+    </view>
+  </view>
 </view>
+

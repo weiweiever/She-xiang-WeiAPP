@@ -1,4 +1,5 @@
 // pages/photographers/photographers.js
+const server = require('../../utils/util.js').server
 Page({
 
   /**
@@ -6,17 +7,38 @@ Page({
    */
   data: {
     all:null,
-    empty:true
+    empty:true,
+    can:false
   },
-
+  reserve:function(){
+    var that = this
+    if(that.data.can==false){
+      wx.showModal({
+        title: '提示',
+        content: '请先注册！',
+      })
+      return
+    }
+    wx.navigateTo({
+      url: 'reserve/reserve',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that=this
-    
+    wx.getStorage({
+      key: 'allInfo',
+      success: function(res) {
+        that.data.can=true
+        that.setData({
+          can:true
+        })
+      },
+    })
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/ReservePhoto/ReservePhoto/allCameramen',
+      url: server + '/ReservePhoto/ReservePhoto/allCameramen',
       success: function (res) {
         console.log('摄影师数据', res.data)
         if (!res.data.isempty) {

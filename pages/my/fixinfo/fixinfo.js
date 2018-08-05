@@ -1,6 +1,6 @@
 // pages/my/fixinfo/fixinfo.js
 const app = getApp()
-
+const server = require('../../../utils/util.js').server
 Page({
 
   /**
@@ -68,7 +68,7 @@ Page({
     }
     console.log('信息通过',info)
     wx.request({
-      url: 'https://zhangzhiyu.xin/weiphp/index.php/Login/Login/fixInfo',
+      url: server + '/Login/Login/fixInfo',
       method: 'POST',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -110,6 +110,11 @@ Page({
   fixServeInfo:function(){
     wx.navigateTo({
       url: '../apply/apply',
+    })
+  },
+  photowall:function(){
+    wx.navigateTo({
+      url: '../photowall/photowall',
     })
   },
   bindRegionChange: function (e) {

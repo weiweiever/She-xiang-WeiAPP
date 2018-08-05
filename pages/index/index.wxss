@@ -23,3 +23,16 @@
 .choice {
   margin-top:40rpx;
 }
+.pop{
+  
+  position: absolute;
+  left: 90rpx;
+  top:70rpx;
+}
+.popimg{
+  width: 575rpx;
+  height: 1024rpx;
+  border: #aaa;
+  border-radius: 5px;
+  border-style: solid;
+}

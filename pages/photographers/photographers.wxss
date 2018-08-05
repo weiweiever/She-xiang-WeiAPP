@@ -4,7 +4,7 @@
   flex-direction: column;
   background-color: #fff;
   align-items: center;
-  margin-top: 20rpx;
+  padding: 20rpx 0 0 0;
   font-family: serif;
   background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/back.jpg?Expires=36001518747724&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=C7cZfqyO261dXQD0rt67vmPvMqs%3D');
   background-position: -100rpx,100rpx;
@@ -34,6 +34,11 @@
   color: #fff;
   font-size: 30rpx;
 }
+.list{
+  height: 780rpx;
+  overflow: auto;
+  overflow-x:hidden;
+}
 .person{
   background-color: #eee;
   display: flex;
@@ -42,7 +47,7 @@
   border: #000;
   border-width: 3rpx;
   border-style: solid;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 .info{
@@ -51,7 +56,7 @@
   flex-direction: column;
 }
 .photo{
-  height:163rpx;
+  height:153rpx;
   width: 272rpx;
 }
 .introduction{
@@ -66,4 +71,19 @@
   font-size: 27rpx;
   margin-left: 20rpx;
   margin-top: 5rpx;
+}
+.reserve{
+  position: fixed;
+  width: 100%;
+  height: 13%;
+  top: 87%;
+  background-image: url('https://zhiyutest.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/back.jpg?Expires=36001518747724&OSSAccessKeyId=LTAIaZn584g09uV9&Signature=C7cZfqyO261dXQD0rt67vmPvMqs%3D');
+  background-position: -100rpx,100rpx;
+  border-top: 3rpx #000 solid;
+}
+.button{
+  width: 30%;
+  margin: 31rpx auto;
+  border: 2rpx #999 solid;
+  border-radius: 15rpx;
 }

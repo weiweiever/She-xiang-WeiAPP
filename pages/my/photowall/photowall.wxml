@@ -1,0 +1,19 @@
+<!--pages/my/photowall/photowall.wxml-->
+<view class='all'>
+  <text class='title'>照片墙</text>
+  <text class='tip'>一共可以放置六张图片，请点击对应的图片进行上传,同时请保证是您自己的作品，否则后果自负</text>
+  <view class='wall'>
+    <view class='row'>
+    <image class='img' bindtap='img' data-idx='1' src="{{img1}}"></image>
+    <image class='img' bindtap='img' data-idx='2' src="{{img2}}"></image>
+    </view>
+    <view class='row'>
+    <image class='img' bindtap='img' data-idx='3' src="{{img3}}"></image>
+    <image class='img' bindtap='img' data-idx='4' src="{{img4}}"></image>
+    </view>
+    <view class='row'>
+    <image class='img' bindtap='img' data-idx='5' src="{{img5}}"></image>
+    <image class='img' bindtap='img' data-idx='6' src="{{img6}}"></image>
+    </view>
+  </view>
+</view>

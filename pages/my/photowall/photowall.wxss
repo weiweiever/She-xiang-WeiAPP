@@ -1,4 +1,4 @@
-/* pages/my/fixinfo/fixinfo.wxss */
+/* pages/my/photowall/photowall.wxss */
 .all{
   height: 100%;
   display: flex;
@@ -12,27 +12,35 @@
 .title{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 70rpx;
-  margin-bottom: 40rpx;
+  margin-bottom: 5rpx;
 }
-.item{
+.tip{
+  color: #777;
+  font-size: 26rpx;
+  background-color: white;
+  width:55%;
+  margin: 10rpx auto; 
+  text-align: center
+}
+.wall{
+  width: 90%;
+  background-color: #eee;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 20rpx;
-  width: 600rpx;
-}
-.input{
-  width:350rpx;
-  margin-left: 15rpx;
   border: #000;
   border-width: 3rpx;
   border-style: solid;
   border-radius: 5px;
 }
-.tip{
-  color: #888;
-  font-size: 25rpx;
-  width:600rpx;
-}
-.button{
-  margin-top: 60rpx;
+.img{
+  width: 306rpx;
+  height: 153rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  border: #000;
+  border-width: 3rpx;
+  border-style: solid;
+  background-color: #fff;
 }
