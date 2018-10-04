@@ -14,7 +14,7 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-const server = 'https://she-xiang.top/weiphp/index.php'
+const server = 'secret'
 
 module.exports = {
   formatTime: formatTime,
